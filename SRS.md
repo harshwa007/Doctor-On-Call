@@ -2,6 +2,7 @@
 
 
 ### 1. Introduction
+
 ## 1.1 Purpose
 The purpose of this document is to provide a detailed description of the software system "Doctor at Call." This system aims to book appointment, facilitating  consultations and medical assistance.
 ## 1.2 Scope
