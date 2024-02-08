@@ -138,11 +138,11 @@ const Patient = () => {
             <Form.Label><FaCamera /> Photo</Form.Label>
             <Form.Control type="file" accept="image/*" custom name="photo" onChange={handleFileChange} required />
           </Form.Group>
-  
+          <br />
           <Button variant="primary" type="submit" block>
             Register
           </Button>
-  
+          &nbsp;&nbsp;
           <Button variant="secondary" type="button" block onClick={handleCancel}>
             Cancel
           </Button>

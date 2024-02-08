@@ -93,7 +93,7 @@ class RegistrationBox extends Component {
       <Container className="mt-5">
         <div className="d-flex justify-content-center">
           <div className="border p-5">
-            <h2 className="text-center mb-4">Registration Page</h2>
+            <h2 className="text-center mb-4">New User? Register Here..</h2>
             <Button
               variant="primary"
               className="me-2"
@@ -102,7 +102,7 @@ class RegistrationBox extends Component {
               Patient Registration
             </Button>
             <Button
-              variant="danger"
+              variant="success"
               onClick={this.handleDoctorRegistration}
             >
               Doctor Registration

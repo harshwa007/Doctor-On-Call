@@ -5,9 +5,9 @@ import { FaUser, FaEnvelope, FaLock, FaPhone, FaGraduationCap, FaCamera } from '
 import './RegistrationForm.css';
 
 const educationOptions = [
-    { value: 'BHMS', label: 'B.H.M.S' },
+    { value: 'BHMS', label: 'B.H.M.S.' },
     { value: 'MBBS', label: 'M.B.B.S.' },
-    { value: 'BAMS', label: 'BAMS' },
+    { value: 'BAMS', label: 'B.A.M.S.' },
     { value: 'other', label: 'Other' },
   ];
 const Doctor = () => {
@@ -158,11 +158,12 @@ const Doctor = () => {
             <Form.Label><FaCamera /> Photo</Form.Label>
             <Form.Control type="file" accept="image/*" custom name="photo" onChange={handleFileChange} required />
           </Form.Group>
-  
+
+          <br />
           <Button variant="primary" type="submit" block>
             Register
           </Button>
-  
+          &nbsp;&nbsp;
           <Button variant="secondary" type="button" block onClick={handleCancel}>
             Cancel
           </Button>
