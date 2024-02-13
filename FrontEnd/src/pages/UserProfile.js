@@ -192,13 +192,18 @@ const UserProfile = () => {
       <br/>
       <Card className="bg-primary text-white p-3 mb-2" style={{width:"50%", alignContent:"center", marginLeft:"350px",marginRight:"250px" }}>
         <CardBody className="d-flex align-items-center">
-          <CardImg top width="100" style={{height:'250px', width:"250px"}} src={userProfile.image} alt={userProfile.name} />
+          <CardImg top width="100" style={{height:'200px', width:"200px" }} src={userProfile.image} alt={userProfile.name} />
           <div className="ms-3">
             <CardTitle tag="h5">{userProfile.name}</CardTitle>
             <CardText>Email: {userProfile.email}</CardText>
             <CardText>Phone: {userProfile.phone}</CardText>
             <CardText>Address: {userProfile.address}</CardText>
-             <CardTitle tag="h5">Medical Info</CardTitle> 
+             
+          </div>
+
+        </CardBody>
+        <CardBody>
+        <CardTitle tag="h5">Medical Info</CardTitle> 
               <CardText>Age: {patientData.age}</CardText>
                     <CardText>Gender: {patientData.sex}</CardText>
                     <CardText>Height: {patientData.height}</CardText>
@@ -210,8 +215,6 @@ const UserProfile = () => {
                     <CardText>blood Pressure diastolic: {patientData.bloodPressure.diastolic}</CardText>
                     <CardText>heart Rate: {patientData.heartRate}</CardText>
                     <CardText>Previous Diseases: {patientData.PreviousDiseases}</CardText>
-          </div>
-
         </CardBody>
         <Button className="btn btn-light" style={{width:"100px", alignSelf:"center"}} onClick={handleEdit}>Edit</Button>
       </Card>
