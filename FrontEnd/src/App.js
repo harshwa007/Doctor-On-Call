@@ -1,5 +1,6 @@
 import './App.css';
-import UserProfile from './pages/UserProfile';
+import DoctorProfile from './pages/DoctorProfile';
+// import UserProfile from './pages/UserProfile';
 // import DoctorList from './pages/DoctorList';
 // import Login from './pages/Login';
 
@@ -16,7 +17,8 @@ function App() {
       {/* <RegistrationBox/>  */}
   {/* <Login/> */}
   {/* <DoctorList/> */}
-  <UserProfile/>
+  {/* <UserProfile/> */}
+  <DoctorProfile/>
     </div>
   );
 }
