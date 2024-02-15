@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardText, Button } from 'reactstrap';
+import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EditDoctorForm from './EditDoctorData';
 // json data for User
@@ -14,14 +15,20 @@ const doctorProfile = {
   // json data for Patient
   const doctorData = 
        {
-            about: "Lorem ipsum is typically a corrupted version of De finibus bonorum et malorum, a 1st-century BC text by the Roman statesman and philosopher Cicero, with words altered, added, and removed to make it nonsensical and improper Latin. The first two words themselves are a truncation of dolorem ipsum .",
+            about: "He is a medical professional who provides primary care services to patients of all ages. He diagnoses and treat a wide range of medical conditions, provide preventive care, and refer patients to specialists when necessary. He build long-term relationships with their patients and provide comprehensive care for their physical and mental well-being.",
             visitingCharges:"$50",
             EstimatedTime:"45 min",
-            career:"Lorem ipsum is typically a corrupted version of De finibus bonorum et malorum, a 1st-century BC text by the Roman statesman and philosopher Cicero, with words altered, added, and removed to make it nonsensical and improper Latin. The first two words themselves are a truncation of dolorem ipsum ."
+            career:"A result oriented Doctor with specialization in Internal Medicine (DNB,FCPS) with specialization in Diabetes ( Dip cert Diabetology) and Asthma with over20+ years of rich and insightful experience across multiple hospitals.Currently working as Consultant Physician and Diabetologist / Apollo Family Physician with Apollo Clinic. Past experience includes working as Consultant Physician, lecturer and as a Co-investigator in Clinical Trials & Research in Chest Medicine, Diabetes and Microbiology of Air Ways."
         }
-    
+  
   // UserProfile function
   const DoctorProfile = () => {
+    const [users, setUsers] = useState([]);
+    useEffect(() => {
+      axios.get('http://localhost:9090/doctor/1').then((response) => {
+        setUsers(response.data);
+      });
+    }, []);
     const [isEditing, setIsEditing] = useState(false);
   
     const handleEdit = () => {
@@ -37,14 +44,14 @@ const doctorProfile = {
         <br/>
         <br/>
         <br/>
-        <Card className="bg-primary text-white p-3 mb-2" style={{width:"65%", alignContent:"center", marginLeft:"200px",marginRight:"200px" }}>
+        <Card className="p-3 mb-2" style={{width:"100%", alignContent:"center" }}>
           <CardBody className="d-flex align-items-center">
             <CardImg top width="100" style={{height:'200px', width:"200px", marginRight:"100px" }} src={doctorProfile.image} alt={doctorProfile.name} />
             <div className="ms-3" style={{marginLeft:"500px",marginRight:"100px"}}>
-              <CardTitle tag="h5">{doctorProfile.name}</CardTitle>
-              <CardText>Email: {doctorProfile.email}</CardText>
-              <CardText>Phone: {doctorProfile.phone}</CardText>
-              <CardText>Education: {doctorProfile.education}</CardText>
+              <CardTitle tag="h5">{users.doctorName}</CardTitle>
+              <CardText>Email: {users.doctorEmail}</CardText>
+              <CardText>Phone: {users.doctorPhoneNumber}</CardText>
+              <CardText>Education: {users.doctorEducation}</CardText>
                
             </div>
             <div> 

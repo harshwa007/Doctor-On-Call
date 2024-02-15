@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Card, CardImg, CardBody, CardTitle, CardText, Button } from 'reactstrap';
+import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EditUserForm from './EditUserData';
 
@@ -34,6 +35,12 @@ const patientData =
   
 // UserProfile function
 const UserProfile = () => {
+  const [users, setUsers] = useState([]);
+  useEffect(() => {
+    axios.get('http://localhost:9090/patient/152').then((response) => {
+      setUsers(response.data);
+    });
+  }, []);
   const [isEditing, setIsEditing] = useState(false);
 
   const handleEdit = () => {
@@ -49,14 +56,14 @@ const UserProfile = () => {
       <br/>
       <br/>
       <br/>
-      <Card className="bg-primary text-white p-3 mb-2" style={{width:"65%", alignContent:"center", marginLeft:"200px",marginRight:"200px" }}>
+      <Card className="p-3 mb-2" style={{width:"100%", alignContent:"center" }}>
         <CardBody className="d-flex align-items-center">
-          <CardImg top width="100" style={{height:'200px', width:"200px", marginRight:"100px" }} src={userProfile.image} alt={userProfile.name} />
-          <div className="ms-3" style={{marginLeft:"500px",marginRight:"100px"}}>
-            <CardTitle tag="h5">{userProfile.name}</CardTitle>
-            <CardText>Email: {userProfile.email}</CardText>
-            <CardText>Phone: {userProfile.phone}</CardText>
-            <CardText>Address: {userProfile.address}</CardText>
+          <CardImg top width="100" style={{height:'200px', width:"200px", marginRight:"300px", marginLeft:"100px" }} src={userProfile.image} alt={userProfile.name} />
+          <div className="ms-3" style={{marginLeft:"500px",marginRight:"300px"}}>
+            <CardTitle tag="h5">{users.patientName}</CardTitle>
+            <CardText>Email: {users.patientEmail}</CardText>
+            <CardText>Phone: {users.patientPhoneNumber}</CardText>
+            <CardText>Address: {users.patientAddress}</CardText>
              
           </div>
           <div>
