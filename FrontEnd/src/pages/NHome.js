@@ -1,11 +1,9 @@
-
-
 import React from 'react';
 import 'remixicon/fonts/remixicon.css';
 import '../pages/styles.css';
-
+//npm i remixicon or npm install remixicon
 const Header = () => (
-  <header className="header">
+  <div className="header">
     <div className="content">
       <h1>
         <span>Get Quick</span>
@@ -19,7 +17,7 @@ const Header = () => (
         receive quick medical visit can significantly impact the outcome
         of a situation.
       </p>
-      <button className="btn">Get Services</button>
+      
     </div>
     <div className="image">
       <span className="image__bg"></span>
@@ -50,33 +48,33 @@ const Header = () => (
         </ul>
       </div>
     </div>
-  </header>
+  </div>
 );
 
 const TestimonialCard = ({ image, name, feedback }) => (
   <div className="testimonial-card">
     <img src={image} alt={name} />
-    <p>{feedback}</p>
     <h4>{name}</h4>
+    <p>{feedback}</p>
   </div>
 );
 
 const Testimonials = () => {
   const testimonials = [
     {
-      image: 'https://example.com/testimonial1.jpg',
-      name: 'John Doe',
-      feedback: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at nisi quis mi blandit tincidunt. Sed vel tortor vitae enim vulputate pretium.'
+      image: 'https://media.licdn.com/dms/image/D5603AQFZm2tVAgo2UA/profile-displayphoto-shrink_200_200/0/1674715010470?e=2147483647&v=beta&t=4IVX2UJvbBYUs2-1ZJ10HGa3xpKE6jOCQNXgqaafcnY',
+      name: 'Mr. Saurabh',
+      feedback: 'The Doctor-on-call has been a game changer for me. I no longer have to take time off work or spend hours waiting in a clinic to book an appointment. With just a few clicks, I can easily view the availability of doctors and schedule an appointment that fits my schedule. '
     },
     {
-      image: 'https://example.com/testimonial2.jpg',
-      name: 'Jane Doe',
-      feedback: 'Suspendisse id urna eu velit cursus pharetra. Proin convallis nunc vel ante facilisis, at volutpat ipsum tempor. Cras consequat dui vitae erat imperdiet, in bibendum ipsum aliquam.'
+      image: 'https://media.licdn.com/dms/image/D5603AQGbmYOVeUFb1w/profile-displayphoto-shrink_800_800/0/1666279090507?e=2147483647&v=beta&t=y7nDvpwvo3J85R-wJBEiBeFvA4__YMf9UHiUfuvCNFE',
+      name: 'Mr. Usama',
+      feedback: 'I recently moved to a new city and was struggling to find a new primary care physician. The Doctor-on-call made it easy for me to search for doctors in my area and book an appointment.'
     },
     {
-      image: 'https://example.com/testimonial3.jpg',
-      name: 'Jim Brown',
-      feedback: 'Aliquam eget magna sit amet orci malesuada sodales. In fringilla, velit eu pretium malesuada, ipsum nisl lobortis quam, eget tincidunt eros libero eu metus.'
+      image: 'https://media.licdn.com/dms/image/C4D03AQFo4ppbWn5inA/profile-displayphoto-shrink_400_400/0/1633321794827?e=2147483647&v=beta&t=iaM-H762_zkdoFKJKXThR21W212dbusxV9urEkKLVjg',
+      name: 'Mr. Harsh',
+      feedback: 'As a busy person, it can be challenging to find time to book doctor appointments for myself. The Doctor-on-call has been a lifesaver for me.'
     }
   ];
 
